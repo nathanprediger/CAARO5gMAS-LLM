@@ -99,16 +99,6 @@ events:
       bombeiros: 5.0
       ambulancia: 10.0
 
-  # - timestamp: 800
-  #   type: "priority_change"
-  #   description: "Suspeitos detidos. Prioridade da polícia retorna ao normal."
-  #   changes:
-  #     policia: 5.0
-  #     bombeiros: 5.0
-  #     ambulancia: 10.0
-
-
-
 
 # Clientes DASH a serem deployados (um por slice)
 dash_clients:

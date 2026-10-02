@@ -21,8 +21,8 @@ Principal problema corrigido em relação à versão anterior (Gemini):
 
 Uso (no seu ambiente, com os dados reais):
     python3 gerar_figuras_ieee.py
-Requer os diretórios `resultados/cidade_inteligente_3` e
-`resultados/slices_hierarquicos` (ajuste DIR_CIDADE / DIR_HIER abaixo).
+Requer os diretórios `results/cidade_inteligente_3` e
+`results/slices_hierarquicos` (ajuste DIR_CIDADE / DIR_HIER abaixo).
 """
 
 import pandas as pd
@@ -292,21 +292,21 @@ def plot_hierarchical(df, eventos, out_path='hierarchical_timeline.pdf', coluna_
 
 
 if __name__ == "__main__":
-    DIR_CIDADE = "resultados/cidade_inteligente_3"
-    DIR_HIER = "resultados/slices_hierarquicos"
+    DIR_CIDADE = "results/smartcity_results"
+    DIR_HIER = "results/hierarchical_results"
 
     if os.path.exists(DIR_CIDADE):
         df_cid = agregar_dados_cenario(DIR_CIDADE)
         eventos_cid = carregar_eventos(DIR_CIDADE)
-        plot_smart_city(df_cid, eventos_cid, out_path='smartcity_timeline.pdf', coluna_unica=False)
-        plot_smart_city(df_cid, eventos_cid, out_path='smartcity_timeline_1col.pdf', coluna_unica=True)
+        plot_smart_city(df_cid, eventos_cid, out_path='graphics/smartcity_timeline.pdf', coluna_unica=False)
+        plot_smart_city(df_cid, eventos_cid, out_path='graphics/smartcity_timeline_1col.pdf', coluna_unica=True)
     else:
         print(f"[AVISO] Diretório não encontrado: {DIR_CIDADE}")
 
     if os.path.exists(DIR_HIER):
         df_hier = agregar_dados_cenario(DIR_HIER)
         eventos_hier = carregar_eventos(DIR_HIER)
-        plot_hierarchical(df_hier, eventos_hier, out_path='hierarchical_timeline.pdf', coluna_unica=False)
-        plot_hierarchical(df_hier, eventos_hier, out_path='hierarchical_timeline_1col.pdf', coluna_unica=True)
+        plot_hierarchical(df_hier, eventos_hier, out_path='graphics/hierarchical_timeline.pdf', coluna_unica=False)
+        plot_hierarchical(df_hier, eventos_hier, out_path='graphics/hierarchical_timeline_1col.pdf', coluna_unica=True)
     else:
         print(f"[AVISO] Diretório não encontrado: {DIR_HIER}")
