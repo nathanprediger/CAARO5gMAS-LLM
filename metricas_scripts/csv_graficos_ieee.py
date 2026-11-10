@@ -254,7 +254,7 @@ def plot_hierarchical(df, eventos, out_path='hierarchical_timeline.pdf', coluna_
         leg_y = 1.22
         _fontctx = {}
 
-    specs = [('BW', 'BW (Mbps)' if coluna_unica else 'Allocated BW\n(Mbps)'),
+    specs = [('BW','Allocated BW\n(Mbps)'),
              ('Bitrate', 'Bitrate\n(kbps)')]
 
     with plt.rc_context(_fontctx):
